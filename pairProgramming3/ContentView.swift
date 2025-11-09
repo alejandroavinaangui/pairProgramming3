@@ -7,15 +7,12 @@
 
 import SwiftUI
 
-
-
 let emojis = ["🇺🇸","🇺🇾","🇺🇿","🇻🇺","🇻🇦","🇻🇪","🇺🇸","🇺🇿","🇻🇺","🇻🇦","🇻🇪","🇺🇾"]
 
 
 private var gridItems = [GridItem(.flexible()),GridItem(.flexible()),GridItem(.flexible())];
 
 struct ContentView: View {
-
     @ObservedObject var viewModel: MapGame
     
     var body: some View {
@@ -24,7 +21,12 @@ struct ContentView: View {
                   .font(.largeTitle)
                   .foregroundColor(.green)
                   .fontWeight(.bold)
-              
+              //added
+              Text(viewModel.statusMessage)
+                  .font(.headline)
+                  .padding(.horizontal)
+                  .frame(maxWidth: .infinity, alignment: .center)
+
               ScrollView {
                   LazyVGrid(columns: gridItems, spacing: 10) {
                       ForEach(viewModel.cards) { card in
@@ -34,6 +36,7 @@ struct ContentView: View {
                                       viewModel.choose(card)
                                   }
                               }
+                              .disabled(card.isMatched) //added
                       }
                   }
                   .padding()
@@ -43,13 +46,7 @@ struct ContentView: View {
   }
     
 
-
-
-
 struct EmojiCard: View{
-    
-   
-    
     var card:MemoryGame.Card
 
     var body: some View {
@@ -71,6 +68,7 @@ struct EmojiCard: View{
         .frame(width:80,height:100)
         .scaleEffect(card.isFaceUp ? 1.5 : 1.0)
         .animation(.easeInOut(duration: 1), value: card.isFaceUp)
+        .accessibilityLabel(card.isFaceUp ? "Face up \(card.content)" : "Face down card")
            
 
     }
