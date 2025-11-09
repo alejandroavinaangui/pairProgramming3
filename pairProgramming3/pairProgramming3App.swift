@@ -11,7 +11,8 @@ import SwiftUI
 struct pairProgramming3App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(viewModel: MapGame())
         }
     }
-}
+    }
+
