@@ -1,7 +1,7 @@
 //
 //  MapGame.swift
 //  pairProgramming3
-//
+//  AKA - the ViewModel
 //  Created by Alejandro Avina on 11/9/25.
 //
 

@@ -1,7 +1,7 @@
 //
 //  MemoryGame.swift
 //  pairProgramming3
-//
+//  AKA - the Model
 //  Created by Alejandro Avina on 11/9/25.
 //
 import Foundation
@@ -11,6 +11,7 @@ struct MemoryGame {
     private(set) var cards: [Card]
     private(set) var numberOfPairs: Int
     
+    //added
     private var indexOfFaceUpCard: Int?
     
    //added
