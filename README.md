@@ -5,3 +5,6 @@ incorporated as well.
 
 Alejandro Avina created the mvvm video in the following link https://youtu.be/XYO9rIoBCTM
 
+I am adding my video to the this readme for my comments on the pulse animation I added. It is basically just an overlay that pulses over the tile you tap. It does not interfere with any other animations.
+
+Here is a the link to my video: https://drive.google.com/file/d/1A1GM5o-xl8x1HipKrGoa3goqraO8NUar/view?usp=share_link
